@@ -64,6 +64,7 @@ foreach {fileName props} $manifest {
     if {$type == "directory"} {
         set mode [lindex $props 1]
         file mkdir $destDir/$fileName
+        file attributes $destDir/$fileName -permissions $mode
     }
 }
 
